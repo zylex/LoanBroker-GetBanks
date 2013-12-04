@@ -6,7 +6,6 @@ package dk.cphbusiness.group11;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
-import java.io.FileOutputStream;
 import java.util.ArrayList;
 
 import javax.xml.stream.XMLEventFactory;
@@ -15,8 +14,6 @@ import javax.xml.stream.XMLEventWriter;
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLOutputFactory;
 import javax.xml.stream.XMLStreamException;
-import javax.xml.stream.events.StartDocument;
-import javax.xml.stream.events.StartElement;
 import javax.xml.stream.events.XMLEvent;
 
 import dk.cphbusiness.group11.exceptions.GetBankCreditScoreException;
@@ -38,16 +35,11 @@ public class MessageProcessor {
 	private XMLEvent endLine;
 	private XMLEvent tab;
 
-	public enum CreditRating {
-		POOR, AVERAGE, GOOD
-	}
-
 	private int creditScore;
 	private ArrayList<Bank> availableBanks;
 	private ArrayList<Bank> banks;
 	private String response;
 	private String message;
-	private CreditRating rating;
 	private String ssn;
 	private String loanAmount;
 	private String loanDurationInMonths;
